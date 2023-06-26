@@ -1,0 +1,8 @@
+{
+    "$schema": "https://schema.tools.vz-connect.net/v2/NetCorePackage.json",
+    "Build":{
+       "BuildType":"NetCorePackage",
+	    "Version": {
+		}
+    }
+ }

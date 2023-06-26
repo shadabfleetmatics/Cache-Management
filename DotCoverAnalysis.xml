@@ -1,0 +1,17 @@
+<AnalyseParams>
+    <TargetExecutable>C:\Program Files\dotnet\dotnet.exe</TargetExecutable>
+    <!-- Add (if any) dll with seperator (Comma) -->
+    <TargetArguments>test Memory.Caching.Management.sln</TargetArguments>
+    <!-- Path relative to jenkins workspace -->
+    <TargetWorkingDir>.</TargetWorkingDir>
+    <Output>DotCover.html</Output>
+    <ReportType>html</ReportType>
+    <Filters>
+        <IncludeFilters/>
+        <ExcludeFilters>
+            <FilterEntry>
+                <ModuleMask>*.Tests.Unit</ModuleMask>
+            </FilterEntry>
+        </ExcludeFilters>
+    </Filters>
+</AnalyseParams>
