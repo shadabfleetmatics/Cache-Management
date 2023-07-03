@@ -1,4 +1,4 @@
-# VerizonConnect.Reveal.Authorization.TokenManagement
+# Memory.Cache.Management
 
 Memory cache is a simple in-memory caching service. It provides a thread safe cache implementation that guarantees to only execute your cachable delegates once (it's lazy!). Under the hood it leverages  Lazy to provide performance and reliability in heavy load scenarios.
 
