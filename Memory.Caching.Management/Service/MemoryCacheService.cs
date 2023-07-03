@@ -83,8 +83,6 @@ namespace Memory.Caching.Management.Service
                     return lazy.Value;
                 case T variable:
                     return variable;
-                case AsyncLazyService<T> asyncLazy:
-                    return asyncLazy.Value.ConfigureAwait(false).GetAwaiter().GetResult();
                 case Task<T> task:
                     return task.Result;
             }
@@ -103,8 +101,6 @@ namespace Memory.Caching.Management.Service
             valueHasChangedType = false;
             switch (item)
             {
-                case AsyncLazyService<T> asyncLazy:
-                    return asyncLazy.Value;
                 case Task<T> task:
                     return task;
                 case Lazy<T> lazy:
@@ -114,7 +110,7 @@ namespace Memory.Caching.Management.Service
             }
 
             var itemsType = item?.GetType();
-            if (itemsType != null && itemsType.IsGenericType && itemsType.GetGenericTypeDefinition() == typeof(AsyncLazyService<>))
+            if (itemsType != null && itemsType.IsGenericType)
             {
                 valueHasChangedType = true;
             }

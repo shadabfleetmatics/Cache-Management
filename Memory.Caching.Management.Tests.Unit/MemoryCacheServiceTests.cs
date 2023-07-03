@@ -37,10 +37,10 @@ namespace Memory.Caching.Management.Tests.Unit
 
 
         [Test]
-        public void AddAndGetReturnsTheCachedItem()
+        public  void AddAndGetReturnsTheCachedItem()
         {
              sut.Add(TestKey,   "SomeValue");
-             var cachedResult = sut.Get<string>(TestKey);
+             var cachedResult = sut.GetAsync<string>(TestKey).GetAwaiter().GetResult();
             Assert.IsNotNull(cachedResult);
             Assert.AreEqual("SomeValue", cachedResult);
         }
